@@ -45,7 +45,6 @@ const places = [
   },
 ];
 
-
 const App = () => {
   const [revealedPlaceIndex, setRevealedPlaceIndex] = useState(0);
 
@@ -66,24 +65,27 @@ const App = () => {
   });
 
   return (
-    <div className="app min-h-screen bg-gradient-to-b from-green-100 to-blue-200 text-gray-800">
+    <div className="app min-h-screen bg-gradient-to-b from-pink-100 via-rose-200 to-red-300 text-gray-800">
+      {/* Audio player for background music */}
+      <audio autoPlay loop>
+        <source src="/LoveM.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+
       <header className="header py-6 bg-white shadow-md">
-        <h1 className="text-4xl font-semibold text-center text-green-600">
-          Explore Pondicherry!!!
+        <h1 className="text-4xl font-semibold text-center text-pink-600">
+          Explore Pondicherry😍🙂!!!
         </h1>
       </header>
 
       <div className="content p-6">
         <div className="timeline overflow-hidden relative">
           {/* Timeline Steps - Displays one step at a time, sliding effect */}
-          <animated.div
-            style={slideTransition}
-            className="flex w-full"
-          >
+          <animated.div style={slideTransition} className="flex w-full">
             {places.map((place, index) => (
               <div key={index} className="timeline-step mb-12 w-full flex-shrink-0">
                 <div className="step-header mb-4 flex items-center">
-                  <div className="w-12 h-12 bg-green-600 text-white flex items-center justify-center rounded-full">
+                  <div className="w-12 h-12 bg-pink-600 text-white flex items-center justify-center rounded-full">
                     {index + 1}
                   </div>
                   <div className="ml-4 text-lg font-semibold">{place.name}</div>
